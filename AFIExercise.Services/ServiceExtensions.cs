@@ -12,7 +12,7 @@ namespace AFIExercise.Services
     {
         public static void AddRegistrationService(this IServiceCollection services)
         {
-            services.AddTransient<IRegistrationService, RegistrationService>();
+            services.AddTransient<ICustomerRegistrationService, CustomerRegistrationService>();
         }
     }
 }

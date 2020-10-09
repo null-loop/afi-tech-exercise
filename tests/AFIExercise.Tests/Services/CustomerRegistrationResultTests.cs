@@ -7,12 +7,12 @@ using Xunit;
 
 namespace AFIExercise.Tests.Services
 {
-    public class RegistrationResultTests
+    public class CustomerRegistrationResultTests
     {
         [Fact]
         public void ConstructedWithCustomerIdSetupCorrectly()
         {
-            var result = new RegistrationResult(100);
+            var result = new CustomerRegistrationResult(100);
 
             result.IsSuccessful.Should().BeTrue();
             result.CustomerId.HasValue.Should().BeTrue();
@@ -24,7 +24,7 @@ namespace AFIExercise.Tests.Services
         [Fact]
         public void ConstructedWithValidationMessagesSetupCorrectly()
         {
-            var result = new RegistrationResult(
+            var result = new CustomerRegistrationResult(
                 new ValidationMessage("FirstName", "Must have a value"),
                 new ValidationMessage("Surname", "Must have a value"));
 
