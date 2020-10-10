@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.128
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AFIExercise.Tests", "tests\AFIExercise.Tests\AFIExercise.Tests.csproj", "{92E8995F-453B-411F-AE06-DCE21D214836}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AFIExercise.Tests", "tests\AFIExercise.Tests\AFIExercise.Tests.csproj", "{92E8995F-453B-411F-AE06-DCE21D214836}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AFIExercise.Services", "AFIExercise.Services\AFIExercise.Services.csproj", "{218C91C1-516C-4B4A-A18F-CD670F2A63D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AFIExercise.Services", "AFIExercise.Services\AFIExercise.Services.csproj", "{218C91C1-516C-4B4A-A18F-CD670F2A63D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AFIExercise.Data", "AFIExercise.Data\AFIExercise.Data.csproj", "{CB1367D6-3205-4117-9D12-63C5A3EA2685}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AFIExercise.Data", "AFIExercise.Data\AFIExercise.Data.csproj", "{CB1367D6-3205-4117-9D12-63C5A3EA2685}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AFIExercise.API", "AFIExercise.API\AFIExercise.API.csproj", "{7EBDE976-9BF8-40E2-A3D3-605038D0BFDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AFIExercise.API", "AFIExercise.API\AFIExercise.API.csproj", "{7EBDE976-9BF8-40E2-A3D3-605038D0BFDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
