@@ -4,7 +4,7 @@ namespace AFIExercise.Services
 {
     public class CustomerRegistrationService : ICustomerRegistrationService
     {
-        public CustomerRegistrationResult Register(RegistrationRequest registrationRequest)
+        public CustomerRegistrationResult Register(CustomerRegistrationRequest registrationRequest)
         {
             throw new NotImplementedException();
         }

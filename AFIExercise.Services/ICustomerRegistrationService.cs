@@ -5,6 +5,6 @@ namespace AFIExercise.Services
 {
     public interface ICustomerRegistrationService
     {
-        CustomerRegistrationResult Register(RegistrationRequest registrationRequest);
+        CustomerRegistrationResult Register(CustomerRegistrationRequest registrationRequest);
     }
 }
