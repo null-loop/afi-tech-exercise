@@ -13,6 +13,7 @@ namespace AFIExercise.Services
         public static void AddRegistrationService(this IServiceCollection services)
         {
             services.AddTransient<ICustomerRegistrationService, CustomerRegistrationService>();
+            services.AddSingleton<CustomerRegistrationRequestValidator>();
         }
     }
 }

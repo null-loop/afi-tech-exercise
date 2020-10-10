@@ -88,7 +88,7 @@ namespace AFIExercise.Tests.Services
         }
 
         [Fact]
-        public void FullyPopulatedWithoutDteOfBirthHasNoErrors()
+        public void FullyPopulatedWithoutDateOfBirthHasNoErrors()
         {
             var request = CreateCompleteCustomerRegistrationRequest();
             request.DateOfBirth = null;

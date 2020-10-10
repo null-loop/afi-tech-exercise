@@ -1,10 +1,11 @@
 ﻿using System.Text;
+using System.Threading.Tasks;
 using System.Transactions;
 
 namespace AFIExercise.Services
 {
     public interface ICustomerRegistrationService
     {
-        CustomerRegistrationResult Register(CustomerRegistrationRequest registrationRequest);
+        Task<CustomerRegistrationResult> Register(CustomerRegistrationRequest registrationRequest);
     }
 }
