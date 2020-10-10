@@ -74,7 +74,7 @@ namespace AFIExercise.Tests.Data
             dbCustomerRegistration.Should().BeEquivalentTo(customerRegistration);
         }
 
-        private void SaveChangesShouldThrowNestedDbUpdateException(string expectedMessage)
+        private void SaveChangesShouldThrowDbUpdateExceptionWithNestedMessage(string expectedMessage)
         {
             Func<Task> saveAction = async () => await _dbFixture.UnitOfWork.SaveChangesAsync();
 
@@ -90,7 +90,7 @@ namespace AFIExercise.Tests.Data
 
             _dbFixture.UnitOfWork.CustomerCustomerRegistrations.Add(customerRegistration);
 
-            SaveChangesShouldThrowNestedDbUpdateException("Cannot insert the value NULL into column 'FirstName'*");
+            SaveChangesShouldThrowDbUpdateExceptionWithNestedMessage("Cannot insert the value NULL into column 'FirstName'*");
         }
 
         [Fact]
@@ -101,7 +101,7 @@ namespace AFIExercise.Tests.Data
 
             _dbFixture.UnitOfWork.CustomerCustomerRegistrations.Add(customerRegistration);
 
-            SaveChangesShouldThrowNestedDbUpdateException("Cannot insert the value NULL into column 'Surname'*");
+            SaveChangesShouldThrowDbUpdateExceptionWithNestedMessage("Cannot insert the value NULL into column 'Surname'*");
         }
 
         [Fact]
@@ -112,7 +112,7 @@ namespace AFIExercise.Tests.Data
 
             _dbFixture.UnitOfWork.CustomerCustomerRegistrations.Add(customerRegistration);
 
-            SaveChangesShouldThrowNestedDbUpdateException("Cannot insert the value NULL into column 'PolicyNumber'*");
+            SaveChangesShouldThrowDbUpdateExceptionWithNestedMessage("Cannot insert the value NULL into column 'PolicyNumber'*");
         }
 
         [Fact]
@@ -123,7 +123,7 @@ namespace AFIExercise.Tests.Data
 
             _dbFixture.UnitOfWork.CustomerCustomerRegistrations.Add(customerRegistration);
 
-            SaveChangesShouldThrowNestedDbUpdateException("String or binary data would be truncated.*");
+            SaveChangesShouldThrowDbUpdateExceptionWithNestedMessage("String or binary data would be truncated.*");
         }
 
         [Fact]
@@ -134,7 +134,7 @@ namespace AFIExercise.Tests.Data
 
             _dbFixture.UnitOfWork.CustomerCustomerRegistrations.Add(customerRegistration);
 
-            SaveChangesShouldThrowNestedDbUpdateException("String or binary data would be truncated.*");
+            SaveChangesShouldThrowDbUpdateExceptionWithNestedMessage("String or binary data would be truncated.*");
         }
 
         [Fact]
@@ -145,7 +145,7 @@ namespace AFIExercise.Tests.Data
 
             _dbFixture.UnitOfWork.CustomerCustomerRegistrations.Add(customerRegistration);
 
-            SaveChangesShouldThrowNestedDbUpdateException("String or binary data would be truncated.*");
+            SaveChangesShouldThrowDbUpdateExceptionWithNestedMessage("String or binary data would be truncated.*");
         }
     }
 }
