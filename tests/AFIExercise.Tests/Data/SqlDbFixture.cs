@@ -5,11 +5,11 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace AFIExercise.Tests.Data
 {
-    public class SqlDbFixture : IDisposable
+    public class SqlDbFixture
     {
-        private readonly IUnitOfWork _unitOfWork;
-
-        public IUnitOfWork UnitOfWork => _unitOfWork;
+        private readonly ServiceProvider _serviceProvider;
+        private IServiceScope _scope;
+        public IUnitOfWork UnitOfWork { get; private set; }
 
         public SqlDbFixture()
         {
@@ -18,18 +18,25 @@ namespace AFIExercise.Tests.Data
 
             serviceCollection.AddSqlServerDataAccess(configuration);
 
-            var serviceProvider = serviceCollection.BuildServiceProvider();
+            _serviceProvider = serviceCollection.BuildServiceProvider();
 
-            var dbContext = serviceProvider.GetService<SqlServerDbContext>();
+            var dbContext = _serviceProvider.GetService<SqlServerDbContext>();
 
             dbContext.Database.EnsureCreated();
-
-            _unitOfWork = serviceProvider.GetService<IUnitOfWork>();
+            dbContext.Dispose();
         }
 
-        public void Dispose()
+
+        public void CreateScope()
         {
-            _unitOfWork.Dispose();
+            _scope = _serviceProvider.CreateScope();
+
+            UnitOfWork = _scope.ServiceProvider.GetService<IUnitOfWork>();
+        }
+
+        public void DisposeScope()
+        {
+            _scope.Dispose();
         }
     }
 }
