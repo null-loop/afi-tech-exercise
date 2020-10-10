@@ -10,7 +10,7 @@ namespace AFIExercise.Services
 {
     public static class ServiceExtensions
     {
-        public static void AddRegistrationService(this IServiceCollection services)
+        public static void AddCustomerRegistrationService(this IServiceCollection services)
         {
             services.AddTransient<ICustomerRegistrationService, CustomerRegistrationService>();
             services.AddSingleton<CustomerRegistrationRequestValidator>();
