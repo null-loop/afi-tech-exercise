@@ -42,5 +42,12 @@ namespace AFIExercise.Tests.Services
             messageTwo.Property.Should().Be("Surname");
             messageTwo.Message.Should().Be("Must have a value");
         }
+
+        [Fact]
+        public void ConstructedWithNoValidationMessagesThrowsArgumentException()
+        {
+            Action constructionAction = ()=> new CustomerRegistrationResult();
+            constructionAction.Should().Throw<ArgumentException>().WithMessage("Cannot create CustomerRegistrationResult with empty validationMessages (Parameter 'validationMessages')");
+        }
     }
 }
