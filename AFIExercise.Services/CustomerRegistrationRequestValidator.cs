@@ -12,9 +12,9 @@ namespace AFIExercise.Services
 
         public CustomerRegistrationRequestValidator()
         {
-            RuleFor(r => r.FirstName).NotEmpty().Length(3, 50);
-            RuleFor(r => r.Surname).NotEmpty().Length(3, 50);
-            RuleFor(r => r.PolicyNumber).NotEmpty().Length(9).Matches("[A-Z]{2}\\-[0-9]{6}");
+            RuleFor(r => r.FirstName).NotNull().Length(3, 50);
+            RuleFor(r => r.Surname).NotNull().Length(3, 50);
+            RuleFor(r => r.PolicyNumber).NotNull().Length(9).Matches("[A-Z]{2}\\-[0-9]{6}");
 
             RuleFor(r => r).Custom((request, context) =>
             {
@@ -22,7 +22,7 @@ namespace AFIExercise.Services
                 var emailAddress = request.EmailAddress;
                 if (!dateOfBirth.HasValue && string.IsNullOrEmpty(emailAddress))
                 {
-                    context.AddFailure($"{nameof(CustomerRegistrationRequest.DateOfBirth)} or {nameof(CustomerRegistrationRequest.EmailAddress)} must be supplied");
+                    context.AddFailure($"'Date Of Birth' or 'Email Address' must not be empty.");
                 }
                 else
                 {
@@ -31,7 +31,7 @@ namespace AFIExercise.Services
                         var currentAge = CalculateCurrentAgeInYears(DateTime.Today, dateOfBirth.Value);
                         if (currentAge < 18)
                         {
-                            context.AddFailure(nameof(CustomerRegistrationRequest.DateOfBirth), "Registrant must be aged 18 years or older on date of registration");
+                            context.AddFailure(nameof(CustomerRegistrationRequest.DateOfBirth), "Registrant must be aged 18 years or older on date of registration.");
                         }
                     }
 
@@ -40,7 +40,7 @@ namespace AFIExercise.Services
                         var match = EmailAddressRegex.Match(emailAddress);
                         if (match.Length != emailAddress.Length)
                         {
-                            context.AddFailure(nameof(CustomerRegistrationRequest.EmailAddress), "Invalid email address format");
+                            context.AddFailure(nameof(CustomerRegistrationRequest.EmailAddress), "'Email Address' is not in the correct format.");
                         }
                     }
                 }
