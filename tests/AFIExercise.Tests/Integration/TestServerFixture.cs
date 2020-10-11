@@ -17,6 +17,7 @@ namespace AFIExercise.Tests.Integration
             _server = new TestServer(new WebHostBuilder().ConfigureAppConfiguration((context, conf) =>
                 {
                     conf.AddJsonFile("testsettings.json");
+                    conf.AddEnvironmentVariables();
                 })
                 .UseStartup<Startup>());
             Client = _server.CreateClient();
