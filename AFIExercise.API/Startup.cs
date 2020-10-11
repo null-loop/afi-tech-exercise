@@ -32,8 +32,8 @@ namespace AFIExercise.API
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "Registration API",
-                    Description = "AFI tech exercise customer registration API",
+                    Title = "Customer Registration API",
+                    Description = "AFI tech exercise - Customer Registration API",
                     TermsOfService = new Uri("https://example.com/terms"),
                 });
 
