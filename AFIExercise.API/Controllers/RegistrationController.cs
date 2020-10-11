@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AFIExercise.API.Controllers
 {
+    [Produces("application/json")]
     [Route("api/registration")]
     [ApiController]
     public class RegistrationController : ControllerBase
@@ -21,6 +22,26 @@ namespace AFIExercise.API.Controllers
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Validates a customer registration request and creates the corresponding resource if successful.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /api/registration
+        ///     {
+        ///        "firstName": "Bob",
+        ///        "surname": "Smith",
+        ///        "policyNumber": "AB-123456",
+        ///        "dateOfBirth": "2020-01-01",
+        ///        "emailAddress": "robert@smith.co.uk"
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="customerRegistrationRequest">Registration request to validate and create.</param>
+        /// <returns>Either the newly created registrations unique identifier or validation messages describing problems with the request.</returns>
+        /// <response code="200">The new customer registrations unique identifier.</response>
+        /// <response code="400">Validation messages describing problems with the request.</response>
         [HttpPost]
         [ProducesResponseType(typeof(Models.CustomerRegistrationCreated), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(Models.ValidationMessage[]), (int)HttpStatusCode.BadRequest)]

@@ -10,7 +10,7 @@ namespace AFIExercise.Data
         {
             services.AddScoped<IUnitOfWork, SqlServerUnitOfWork>();
             services.AddTransient<ICustomerRegistrationRepository, SqlServerCustomerRegistrationRepository>();
-            services.AddDbContext<SqlServerDbContext>(options => options.UseSqlServer(configuration["SqlServer:ConnectionString"]));
+            services.AddDbContext<SqlServerDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("SqlServer")));
         }
     }
 }

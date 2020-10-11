@@ -12,6 +12,7 @@ namespace AFIExercise.Data
         public SqlServerUnitOfWork(SqlServerDbContext dbContext)
         {
             _dbContext = dbContext;
+            _dbContext.Database.EnsureCreated();
             _customerRegistrationRepository = new Lazy<ICustomerRegistrationRepository>(() => new SqlServerCustomerRegistrationRepository(dbContext));
         }
 

@@ -1,10 +1,14 @@
-﻿using AFIExercise.Data;
+﻿using System;
+using System.IO;
+using System.Reflection;
+using AFIExercise.Data;
 using AFIExercise.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
 namespace AFIExercise.API
 {
@@ -23,7 +27,21 @@ namespace AFIExercise.API
             services.AddMappers();
             services.AddSqlServerDataAccess(Configuration);
             services.AddCustomerRegistrationService();
-            services.AddSwaggerGen();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Registration API",
+                    Description = "AFI tech exercise customer registration API",
+                    TermsOfService = new Uri("https://example.com/terms"),
+                });
+
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+            });
             services.AddControllers();
         }
 

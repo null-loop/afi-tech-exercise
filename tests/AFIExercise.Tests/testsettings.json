@@ -1,5 +1,5 @@
 {
-  "SqlServer": {
-    "ConnectionString": "Server=(LocalDb)\\MSSQLLocalDB;Database=afitechexerciseregistrations;Trusted_Connection=True;MultipleActiveResultSets=true"
+  "ConnectionStrings": {
+    "SqlServer": "Server=(LocalDb)\\MSSQLLocalDB;Database=afitechexerciseregistrations;Trusted_Connection=True;MultipleActiveResultSets=true"
   } 
 }
