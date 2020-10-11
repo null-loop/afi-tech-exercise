@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.RegularExpressions;
 using AFIExercise.Services;
 using FluentAssertions;
-using Microsoft.EntityFrameworkCore.Internal;
-using Microsoft.EntityFrameworkCore.SqlServer.Design.Internal;
 using Xunit;
 
 namespace AFIExercise.Tests.Services

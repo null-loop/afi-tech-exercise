@@ -1,5 +1,4 @@
-﻿using System;
-using AFIExercise.Data;
+﻿using AFIExercise.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
