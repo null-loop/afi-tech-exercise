@@ -8,17 +8,28 @@
 * FluentValidation
 * Swashbuckle
 
-## Build & Test
+## Run tests
 
-Clone repository and simply run:
+From the root of the repo simply run:
 
-```
-dotnet build
-```
-or
 ```
 dotnet test
 ```
+
+All being well, you should see 
+```
+Passed!  - Failed:     0, Passed:    48, Skipped:     0, Total:    48, Duration: 2 s - AFIExercise.Tests.dll (netcoreapp3.1)
+```
+
+## Run API
+
+From the root of the repo simply run:
+
+```
+dotnet run --project AFIExercise.API\AFIExercise.API.csproj
+```
+
+Once the host has started navigate to [http://localhost:5000/swagger/index.html]()
 
 ## Projects
 
@@ -33,7 +44,7 @@ dotnet test
 
 ## Databases
 
-Local development and test makes use of LocalDB. Deployed Azure web app and Azure DevOps pipeline tests make use of Azure SQL Server instance.
+Local development and test makes use of LocalDB, which should be automatically created as required. Deployed Azure web app and Azure DevOps pipeline tests make use of Azure SQL Server instance.
 
 ## Links
 
