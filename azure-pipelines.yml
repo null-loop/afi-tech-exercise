@@ -33,4 +33,4 @@ steps:
     projects: '$(solution)'
     arguments: '--configuration $(buildConfiguration)'
   env:
-    ConnectionString:SqlServer: $(ConnectionStrings:SqlServer)
+    ConnectionStrings:SqlServer: $(ConnectionStrings:SqlServer)
