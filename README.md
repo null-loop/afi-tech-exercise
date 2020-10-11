@@ -29,7 +29,7 @@ From the root of the repo simply run:
 dotnet run --project AFIExercise.API\AFIExercise.API.csproj
 ```
 
-Once the host has started navigate to [http://localhost:5000/swagger/index.html]()
+Once the host has started navigate to [http://localhost:5000/swagger/index.html](http://localhost:5000/swagger/index.html)
 
 ## Projects
 
