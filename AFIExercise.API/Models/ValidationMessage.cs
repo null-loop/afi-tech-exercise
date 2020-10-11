@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace AFIExercise.API.Models
+﻿namespace AFIExercise.API.Models
 {
     /// <summary>
     /// Type returned from the API when a request fails validation. More than one may be returned.
