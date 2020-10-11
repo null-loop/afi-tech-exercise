@@ -13,7 +13,10 @@ namespace AFIExercise.Tests.Data
         public SqlDbFixture()
         {
             var serviceCollection = new ServiceCollection();
-            var configuration = new ConfigurationBuilder().AddJsonFile("testsettings.json").Build();
+            var configuration = new ConfigurationBuilder()
+                .AddJsonFile("testsettings.json")
+                .AddEnvironmentVariables()
+                .Build();
 
             serviceCollection.AddSqlServerDataAccess(configuration);
 
