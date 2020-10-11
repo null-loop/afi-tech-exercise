@@ -25,11 +25,11 @@ steps:
   inputs:
     command: 'build'
     projects: '$(solution)'
-    arguments: '--configuration $(buildConfiguration) /p:Platform=$(buildPlatform)'
+    arguments: '--configuration $(buildConfiguration) -p:Platform=$(buildPlatform)'
 
 - task: DotNetCoreCLI@2
   displayName: Test .NET Code
   inputs:
     command: 'test'
     projects: '$(solution)'
-    arguments: '--configuration $(buildConfiguration) /p:Platform=$(buildPlatform)'
+    arguments: '--configuration $(buildConfiguration) -p:Platform=$(buildPlatform)'
