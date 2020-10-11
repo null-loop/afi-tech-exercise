@@ -37,9 +37,13 @@ dotnet test
 
 Local development and test makes use of LocalDB. Deployed Azure web app and Azure DevOps pipeline tests make use of Azure SQL Server instance.
 
-## Deployed instance
+## Links
 
 Azure DevOps pipeline automatically deploys successful builds to `https://afi-exercise-web-api.azurewebsites.net`:
 
 * [Swagger UI](https://afi-exercise-web-api.azurewebsites.net/swagger/index.html)
 * [Swagger JSON](https://afi-exercise-web-api.azurewebsites.net/swagger/v1/swagger.json)
+
+Azure Devops pipeline build results available at:
+
+* [CI & CD pipeline](https://dev.azure.com/nullloop/AFI%20Tech%20Exercise/_build?definitionId=7)
