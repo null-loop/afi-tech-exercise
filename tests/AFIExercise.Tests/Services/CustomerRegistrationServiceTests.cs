@@ -53,7 +53,8 @@ namespace AFIExercise.Tests.Services
             unitOfWorkMock.Setup(a => a.CustomerCustomerRegistrations.Add(It.Is<CustomerRegistration>(
                 registration => registration.FirstName == request.FirstName && registration.Surname == request.Surname &&
                      registration.DateOfBirth == request.DateOfBirth && registration.EmailAddress == request.EmailAddress &&
-                     registration.PolicyNumber == request.PolicyNumber))).Callback<CustomerRegistration>(r=>r.Id = 101);
+                     registration.PolicyNumber == request.PolicyNumber)))
+                .Callback<CustomerRegistration>(r=>r.Id = 101);
 
             var service = new CustomerRegistrationService(unitOfWorkMock.Object, new CustomerRegistrationRequestValidator());
             

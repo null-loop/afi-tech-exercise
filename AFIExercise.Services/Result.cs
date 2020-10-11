@@ -11,8 +11,8 @@ namespace AFIExercise.Services
             IsSuccessful = !ValidationMessages.Any();
         }
 
-        public bool IsSuccessful { get; private set; }
+        public bool IsSuccessful { get; }
 
-        public ValidationMessage[] ValidationMessages { get; private set; }
+        public ValidationMessage[] ValidationMessages { get; }
     }
 }
