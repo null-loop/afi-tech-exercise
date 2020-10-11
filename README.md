@@ -1,7 +1,5 @@
 [![Build Status](https://dev.azure.com/nullloop/AFI%20Tech%20Exercise/_apis/build/status/CI%20%26%20CD?branchName=main)](https://dev.azure.com/nullloop/AFI%20Tech%20Exercise/_build/latest?definitionId=7&branchName=main)
 
-# AFI Tech Exercise
-
 ## Tech Stack
 
 * .NET Core 3.1
