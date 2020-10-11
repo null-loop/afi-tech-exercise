@@ -7,25 +7,28 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'ubuntu-latest'
 
 variables:
-  solution: '**/*.sln'
+  solution: 'AFIExercise.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
 steps:
 - task: UseDotNet@2
+  displayName: Use .NET Core SDK
   inputs:
     packageType: 'sdk'
     version: 3.1.402
 - task: DotNetCoreCLI@2
+  displayName: Build .NET Code
   inputs:
     command: 'build'
     projects: '$(solution)'
     arguments: '--configuration $(buildConfiguration) /p:Platform=$(buildPlatform)'
 
 - task: DotNetCoreCLI@2
+  displayName: Test .NET Code
   inputs:
     command: 'test'
     projects: '$(solution)'
