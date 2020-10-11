@@ -7,6 +7,8 @@
 * EntityFramework Core
 * FluentValidation
 * Swashbuckle
+* AutoMapper
+* Moq
 
 ## Run tests
 
