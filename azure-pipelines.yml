@@ -11,7 +11,6 @@ pool:
 
 variables:
   solution: 'AFIExercise.sln'
-  buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
 steps:
@@ -25,11 +24,11 @@ steps:
   inputs:
     command: 'build'
     projects: '$(solution)'
-    arguments: '--configuration $(buildConfiguration) -p:Platform=$(buildPlatform)'
+    arguments: '--configuration $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
   displayName: Test .NET Code
   inputs:
     command: 'test'
     projects: '$(solution)'
-    arguments: '--configuration $(buildConfiguration) -p:Platform=$(buildPlatform)'
+    arguments: '--configuration $(buildConfiguration)'
