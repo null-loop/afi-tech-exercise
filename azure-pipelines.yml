@@ -25,7 +25,6 @@ steps:
     command: 'build'
     projects: '$(solution)'
     arguments: '--configuration $(buildConfiguration)'
-
 - task: DotNetCoreCLI@2
   displayName: Test .NET Code
   inputs:
@@ -34,3 +33,22 @@ steps:
     arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
   env:
     ConnectionStrings:SqlServer: $(ConnectionStrings:SqlServer)
+- task: DotNetCoreCLI@2
+  displayName: Publish Web App
+  inputs:
+    command: publish
+    publishWebProjects: True
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: True
+- task: PublishBuildArtifacts@1
+  displayName: Publish build artifact
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+    artifactName: 'afi-exercise-web-api'
+- task: AzureWebApp@1
+  displayName: Deploy to Azure
+  inputs:
+    azureSubscription: 'Visual Studio Enterprise(473b619f-ab83-4122-9e70-726780c0c243)'
+    appType: 'webAppLinux'
+    appName: 'afi-exercise-web-api'
+    package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
