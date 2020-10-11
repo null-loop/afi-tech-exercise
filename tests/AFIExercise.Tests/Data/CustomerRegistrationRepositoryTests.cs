@@ -121,7 +121,7 @@ namespace AFIExercise.Tests.Data
 
             _dbFixture.UnitOfWork.CustomerCustomerRegistrations.Add(customerRegistration);
 
-            SaveChangesShouldThrowDbUpdateExceptionWithNestedMessage("String or binary data would be truncated.*");
+            SaveChangesShouldThrowDbUpdateExceptionWithNestedMessage("String or binary data would be truncated*");
         }
 
         [Fact]
@@ -132,7 +132,7 @@ namespace AFIExercise.Tests.Data
 
             _dbFixture.UnitOfWork.CustomerCustomerRegistrations.Add(customerRegistration);
 
-            SaveChangesShouldThrowDbUpdateExceptionWithNestedMessage("String or binary data would be truncated.*");
+            SaveChangesShouldThrowDbUpdateExceptionWithNestedMessage("String or binary data would be truncated*");
         }
 
         [Fact]
@@ -143,7 +143,7 @@ namespace AFIExercise.Tests.Data
 
             _dbFixture.UnitOfWork.CustomerCustomerRegistrations.Add(customerRegistration);
 
-            SaveChangesShouldThrowDbUpdateExceptionWithNestedMessage("String or binary data would be truncated.*");
+            SaveChangesShouldThrowDbUpdateExceptionWithNestedMessage("String or binary data would be truncated*");
         }
     }
 }
